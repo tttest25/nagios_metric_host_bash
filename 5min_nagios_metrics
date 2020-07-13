@@ -1,3 +1,3 @@
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/5 * * * * root /opt/scripts/bash_cron_nagios_metrics/metrics.sh >/dev/null 2>&1 
+*/5 * * * * root /opt/scripts/bash_cron_nagios_metrics/metrics.sh >/opt/scripts/bash_cron_nagios_metrics/metrics.log 2>>/opt/scripts/bash_cron_nagios_metrics/metrics.err

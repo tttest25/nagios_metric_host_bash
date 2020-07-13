@@ -131,11 +131,15 @@ mess=$mess" | 'CPU'="$cpu_use"%;"$cpu_warning";"$cpu_critical";0;100 'RAM'="$ram
 mess=$mess$vol_free"%;"$disk_free_warning";"$disk_free_critical";0;100 'Disk_use'="$vol_use"%;"$disk_use_warning";"$disk_use_critical";0;100 'Uptime'="$uptime_days";;;;"
 
 curl \
+  --silent \
   --request "POST" \
   --user 'fed_monitor:l3tm31n' \
   --header 'Content-Type: application/x-www-form-urlencoded' \
   --data-urlencode "perfdata=$mess" \
-  --url $url
+  --url $url \
+  2>&1
+
+
 
 #echo -----------------------------------------------------------------------------------
 #echo $mess
